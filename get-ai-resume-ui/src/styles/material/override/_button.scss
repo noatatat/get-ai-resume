@@ -1,0 +1,42 @@
+@use "@angular/material" as mat;
+@use "@angular/cdk" as cdk;
+@use "sass:map";
+@use "../core/colors" as color;
+@use "../core/breakpoints" as breakpoints;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+button[matbutton="filled"] {
+  @include mat.button-overrides(
+    (
+      //filled-container-color: map.get(color.$secondary, white),
+      //filled-label-text-color: map.get(color.$black, 700),
+      //filled-ripple-color: map.get(color.$purple, 300),
+      filled-container-height: 48px,
+      filled-icon-offset: 0,
+      filled-icon-spacing: 10px
+    )
+  );
+
+  &.secondary {
+    @include mat.button-overrides(
+      (
+        filled-container-color: map.get(color.$secondary, white),
+        filled-label-text-color: map.get(color.$black, 700),
+        filled-ripple-color: map.get(color.$purple, 300),
+        filled-container-height: 48px,
+      )
+    );
+  }
+
+  &.icon {
+    min-width: 48px;
+
+    @include mat.button-overrides(
+      (
+        filled-icon-offset: 0,
+        filled-icon-spacing: 0,
+        filled-horizontal-padding: 12px,
+      )
+    );
+  }
+}

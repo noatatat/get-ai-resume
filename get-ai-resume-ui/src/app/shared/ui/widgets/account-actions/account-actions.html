@@ -1,0 +1,11 @@
+<button
+  class="secondary"
+  matButton="filled"
+  type="button"
+  [class.icon]="isMobile()"
+>
+  <mat-icon svgIcon="main:pen" />
+  <span [class.cdk-visually-hidden]="isMobile()"> Создать резюме </span>
+</button>
+
+<button matButton="filled" type="button">Basic</button>

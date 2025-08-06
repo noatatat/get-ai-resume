@@ -1,0 +1,22 @@
+@use "functions" as f;
+
+.header {
+  background: f.purple(900);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    position: relative;
+    height: 42px;
+    width: 195px;
+  }
+
+  @media (min-width >= 600px) {
+    &__logo {
+      height: 62px;
+      width: 288px;
+    }
+  }
+}

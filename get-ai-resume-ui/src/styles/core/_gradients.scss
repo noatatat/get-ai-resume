@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "colors" as colors;
+
+$gradient: (
+  main: linear-gradient(
+      0deg,
+      map.get(colors.$purple, 300),
+      0%,
+      map.get(colors.$purple, 900)
+    ),
+);

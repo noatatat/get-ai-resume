@@ -12,8 +12,16 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
     "target": "ES2022",
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@features/*": ["./src/app/features/*"],
+      "@shared/*": ["./src/app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -23,6 +31,7 @@
     "strictTemplates": true
   },
   "files": [],
+  "include": ["src/assets/icons/**/*", "src/*.d.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json"

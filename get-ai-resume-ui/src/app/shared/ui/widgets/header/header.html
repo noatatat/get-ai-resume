@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="header__logo">
+    <img
+      alt="Get AI Resume Logo"
+      fill
+      priority
+      [ngSrc]="`./assets/logo/${logoColor()}.svg`"
+    />
+  </div>
+  @if (!isMobile()) {
+    <div class="header__menu">
+      <aires-main-nav />
+    </div>
+  }
+  <div class="header__actions">
+    <aires-account-actions />
+  </div>
+</div>

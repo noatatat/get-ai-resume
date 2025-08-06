@@ -1,0 +1,7 @@
+@use "../core/breakpoints" as breakpoints;
+
+@mixin desktop {
+  @media (min-width: breakpoints.$bp-tab) {
+    @content;
+  }
+}
