@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header flex items-center justify-between relative">
   <div class="header__logo">
     <img
       alt="Get AI Resume Logo"
@@ -7,12 +7,12 @@
       [ngSrc]="`./assets/logo/${logoColor()}.svg`"
     />
   </div>
-  @if (!isMobile()) {
-    <div class="header__menu">
+  @if (bp.isDesktop()) {
+    <div class="header__menu abs-center">
       <aires-main-nav />
     </div>
   }
-  <div class="header__actions">
+  <div class="header__actions ml-auto">
     <aires-account-actions />
   </div>
 </div>

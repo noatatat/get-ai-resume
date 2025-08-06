@@ -1,0 +1,7 @@
+.out-debug {
+  outline: 1px solid red;
+
+  &-all > * {
+    outline: 1px solid red;
+  }
+}

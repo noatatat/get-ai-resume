@@ -1,1 +1,18 @@
-<p>main-nav works!</p>
+<!--<div class="flex ">-->
+<!--  @for (link of list; track link) {-->
+<!--    <a-->
+<!--      mat-list-item-->
+<!--      [attr.href]="link.anchor"-->
+<!--    >-->
+<!--      {{ link.title }}-->
+<!--    </a>-->
+<!--  }-->
+<!--</div>-->
+
+<mat-nav-list class="tablet:!flex">
+  @for (link of list; track link.anchor) {
+    <a mat-list-item [attr.href]="link.anchor">
+      {{ link.title }}
+    </a>
+  }
+</mat-nav-list>

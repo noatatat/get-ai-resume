@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { APP_ROUTES } from '@core/const';
+import { metaGuard } from '@core/guards';
 
 /**
  * Main application routes
@@ -6,11 +8,16 @@ import { Routes } from '@angular/router';
  */
 export const routes: Routes = [
   {
-    path: '',
+    path: APP_ROUTES['ROOT'].path,
     pathMatch: 'full',
+    canActivate: [metaGuard],
     loadChildren: () =>
-      import('./features/landing/landing.routes').then((r) => r.landingRoutes),
+      import('./features/landing/landing.routes').then((m) => m.landingRoutes),
+    data: {
+      routeKey: 'ROOT',
+    },
   },
+
   // {
   //   path: '**',
   //   redirectTo: 'dashboard'

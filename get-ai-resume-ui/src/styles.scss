@@ -1,8 +1,7 @@
-@use "styles/material/theme";
-@use "styles/material/override";
 @use "@angular/cdk";
-@use "styles/tailwind/tailwind";
-@include cdk.a11y-visually-hidden;
+@use "styles/material";
+@use "styles/tailwind";
+@use "styles/extensions";
 
 html,
 body {

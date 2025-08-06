@@ -1,5 +1,9 @@
 @use "tailwindcss";
+@use "../core/breakpoints" as bp;
+@use "../core/spacings" as s;
 
 @theme {
-  --some-shit: 666;
+  --breakpoint-tablet: #{bp.$bp-tablet};
+  --breakpoint-desktop: #{bp.$bp-desktop};
+  --spacing: #{s.$base-step};
 }

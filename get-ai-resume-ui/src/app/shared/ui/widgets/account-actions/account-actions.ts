@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { IS_MOBILE } from '@core/providers';
+import { VIEWPORT_STATE } from '@core/providers';
 
 @Component({
   selector: 'aires-account-actions',
@@ -11,5 +11,5 @@ import { IS_MOBILE } from '@core/providers';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountActions {
-  readonly isMobile = inject(IS_MOBILE);
+  readonly bp = inject(VIEWPORT_STATE);
 }

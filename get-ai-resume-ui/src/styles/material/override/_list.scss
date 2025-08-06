@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../utils/functions" as f;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+[class*="flex"] {
+  @include mat.list-overrides(
+    (
+      list-item-label-text-color: f.white(),
+      list-item-focus-label-text-color: f.purple(500),
+      list-item-focus-state-layer-color: trasparent,
+      list-item-hover-label-text-color: f.purple(500),
+      list-item-hover-state-layer-color: trasparent,
+    )
+  );
+
+  .mat-mdc-list-item {
+    width: auto;
+  }
+}

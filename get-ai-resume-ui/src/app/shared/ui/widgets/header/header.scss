@@ -1,11 +1,9 @@
 @use "functions" as f;
+@use "mixins" as m;
 
 .header {
   background: f.purple(900);
   padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   &__logo {
     position: relative;
@@ -13,7 +11,7 @@
     width: 195px;
   }
 
-  @media (min-width >= 600px) {
+  @include m.tablet-width {
     &__logo {
       height: 62px;
       width: 288px;

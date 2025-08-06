@@ -4,3 +4,15 @@
 @function purple($string) {
   @return map.get(colors.$purple, $string);
 }
+
+@function neutral($string) {
+  @return map.get(colors.$black, $string);
+}
+
+@function white() {
+  @return map.get(colors.$secondary, white);
+}
+
+@function wrong() {
+  @return map.get(colors.$secondary, wrong);
+}

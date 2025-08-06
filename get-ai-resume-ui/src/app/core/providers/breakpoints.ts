@@ -14,25 +14,21 @@ export const VIEWPORT_STATE = new InjectionToken('VIEWPORT_STATE', {
     return {
       isMobile: toSignal(
         breakpointObserver
-          .observe([
-            Breakpoints.HandsetPortrait,
-            // Breakpoints.HandsetLandscape,
-            // Breakpoints.TabletPortrait
-          ])
+          .observe([Breakpoints.XSmall])
           .pipe(map((state) => state.matches)),
         { initialValue: false },
       ),
 
       isTablet: toSignal(
         breakpointObserver
-          .observe([Breakpoints.Tablet, Breakpoints.TabletLandscape])
+          .observe([Breakpoints.Small])
           .pipe(map((state) => state.matches)),
         { initialValue: false },
       ),
 
       isDesktop: toSignal(
         breakpointObserver
-          .observe([Breakpoints.Web, Breakpoints.WebLandscape])
+          .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
           .pipe(map((state) => state.matches)),
         { initialValue: true },
       ),
@@ -45,5 +41,21 @@ export const IS_MOBILE = new InjectionToken('IS_MOBILE', {
   factory: (): Signal<boolean> => {
     const viewport = inject(VIEWPORT_STATE);
     return computed(() => viewport.isMobile());
+  },
+});
+
+export const IS_TABLET = new InjectionToken('IS_TABLET', {
+  providedIn: 'root',
+  factory: (): Signal<boolean> => {
+    const viewport = inject(VIEWPORT_STATE);
+    return computed(() => viewport.isTablet());
+  },
+});
+
+export const IS_DESKTOP = new InjectionToken('IS_DESKTOP', {
+  providedIn: 'root',
+  factory: (): Signal<boolean> => {
+    const viewport = inject(VIEWPORT_STATE);
+    return computed(() => viewport.isDesktop());
   },
 });

@@ -24,9 +24,8 @@ export class IconsService {
     //   'dashboard',
     //   this.getIconUrl('dashboard.svg'),
     // );
-
     // Набор иконок
-    this.iconRegistry.addSvgIconSet(this.getIconUrl('main-set.svg'));
+    // this.iconRegistry.addSvgIconSet(this.getIconUrl('main-set.svg'));
   }
 
   private registerNamespaceIcons(): void {

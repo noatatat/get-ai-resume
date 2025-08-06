@@ -2,10 +2,12 @@
   class="secondary"
   matButton="filled"
   type="button"
-  [class.icon]="isMobile()"
+  [class.icon]="bp.isMobile()"
 >
   <mat-icon svgIcon="main:pen" />
-  <span [class.cdk-visually-hidden]="isMobile()"> Создать резюме </span>
+  <span class="sr-only tablet:not-sr-only"> Создать резюме </span>
 </button>
 
-<button matButton="filled" type="button">Basic</button>
+<button class="icon ml-2 tablet:ml-3" matButton="filled" type="button">
+  <mat-icon svgIcon="main:user" />
+</button>
